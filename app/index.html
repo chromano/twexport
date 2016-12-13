@@ -1,0 +1,62 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>twexport</title>
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <!-- build:css /styles/vendor.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- build:css /styles/main.css -->
+        <link rel="stylesheet" href="/styles/main.css">
+        <!-- endbuild -->
+    </head>
+    <body id="landing-page">
+        <!--[if lt IE 10]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="splash">
+            <h1 class="splash-head">Twitter export tool</h1>
+            <p class="splash-subhead">
+                Exporting of twitter lists, friends and tweets to CSV format, so you can easily download the results into your favorite spreadsheet editor to work with it. <strong>Brainless process</strong>.
+            </p>
+            <div class="cta">
+                <button id="cta" onclick="hello('twitter').login()" class="pure-button pure-button-primary">Start exporting now</button><br/>
+                <span class="details">* Requires to connect your twitter account</span>
+            </div>
+        </div>
+		<script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-88916818-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+        <!-- build:js /scripts/index.js -->
+        <!-- bower:js -->
+        <script src="/bower_components/jquery/dist/jquery.js"></script>
+        <script src="/bower_components/hello/dist/hello.all.min.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <script type="text/javascript">
+          hello.init({
+            twitter: '$TWITTER_CLIENT_ID$',
+          }, {
+            page_uri: '/export/',
+            display: 'page',
+            oauth_proxy: '/auth'
+          });
+        </script>
+    </body>
+</html> 

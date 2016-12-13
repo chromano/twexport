@@ -1,0 +1,24 @@
+<div id="export" class="row" ng-cloak ng-show="results.length">
+    <div class="col-lg-12">
+        <a href="" ng-click="download()" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-cloud-download"></i> Download as CSV</a>
+        <div class="summary" ng-cloak ng-if="results.length">Last <span>{{ summary.tweets }}</span> tweets</div>
+    </div>
+</div>
+<div ng-cloak ng-if="results.length">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date Created</th>
+                <th>Text</th>
+                <th>Retweets</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="tweet in results">
+                <td>{{ tweet.created_at }}</td>
+                <td>{{ tweet.text }}</td>
+                <td>{{ tweet.retweet_count }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
